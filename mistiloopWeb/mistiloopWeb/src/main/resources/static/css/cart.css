@@ -1,0 +1,26 @@
+body{
+    padding:40px;
+    font-family:Arial;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+}
+
+th{
+    background:#f8d7da;
+}
+
+h1{
+    color:#8b4513;
+}
+
+h2{
+    margin-top:20px;
+}
