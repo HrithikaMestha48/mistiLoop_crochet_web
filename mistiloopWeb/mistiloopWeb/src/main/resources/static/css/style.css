@@ -203,3 +203,23 @@ footer{
     margin-top:50px;
     font-weight:600;
 }
+html{
+    scroll-behavior:smooth;
+}
+
+.shop-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    background:#ff69b4;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.shop-btn:hover{
+    background:#ff1493;
+}

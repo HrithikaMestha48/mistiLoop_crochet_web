@@ -1,0 +1,141 @@
+body{
+    background:#fffaf7;
+    font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#8b4513;
+    margin-bottom:30px;
+}
+
+.add-btn{
+    background:#ff69b4;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.add-btn:hover{
+    background:#ff1493;
+}
+
+.form-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    margin-bottom:40px;
+    display:none;
+}
+
+.form-card h2{
+    margin-bottom:20px;
+}
+
+.form-card input,
+.form-card select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.stock-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.stock-box button{
+    width:35px;
+    height:35px;
+    border:none;
+    background:#ff69b4;
+    color:white;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.stock-box input{
+    width:100px;
+    text-align:center;
+}
+
+.file-upload{
+    margin-bottom:20px;
+}
+
+.save-btn{
+    width:100%;
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.save-btn:hover{
+    background:#218838;
+}
+
+table{
+    width:100%;
+    background:white;
+    border-collapse:collapse;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+thead{
+    background:#f8d7da;
+}
+
+th,td{
+    padding:15px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#fafafa;
+}
+
+.table-img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.edit-btn{
+    background:#ffc107;
+    color:black;
+    padding:8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    margin-right:5px;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    padding:8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+}

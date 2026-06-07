@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🧶 Mistiloop Admin Dashboard</h1>
+
+  <button id="showFormBtn" class="add-btn">
+    + Add Product
+  </button>
+
+  <div id="productForm" class="form-card">
+
+    <h2>Add New Product</h2>
+
+    <form action="/admin/save" method="post"
+          enctype="multipart/form-data">
+
+      <input type="text"
+             name="name"
+             placeholder="Product Name"
+             required>
+
+      <input type="number"
+             step="0.01"
+             name="price"
+             placeholder="Price"
+             required>
+
+      <!-- CATEGORY -->
+
+      <select id="categorySelect"
+              name="category">
+
+        <option value="">Select Category</option>
+
+        <option value="Flowers">Flowers</option>
+        <option value="Keychains">Keychains</option>
+        <option value="Sweaters">Sweaters</option>
+        <option value="Wall Hangings">Wall Hangings</option>
+
+        <option value="NEW">
+          ➕ Add New Category
+        </option>
+
+      </select>
+
+      <input type="text"
+             id="newCategory"
+             placeholder="Enter New Category"
+             style="display:none;">
+
+      <!-- STOCK -->
+
+      <div class="stock-box">
+
+        <label>Stock:</label>
+
+        <button type="button"
+                onclick="decreaseStock()">
+          -
+        </button>
+
+        <input type="number"
+               id="stock"
+               name="stock"
+               value="1"
+               min="0">
+
+        <button type="button"
+                onclick="increaseStock()">
+          +
+        </button>
+
+      </div>
+
+      <!-- IMAGE UPLOAD -->
+
+      <div class="file-upload">
+
+        <label>Select Product Image</label>
+
+        <input type="file"
+               name="imageFile"
+               accept="image/*">
+
+      </div>
+
+      <button type="submit"
+              class="save-btn">
+        Save Product
+      </button>
+
+    </form>
+
+  </div>
+
+  <h2>Available Products</h2>
+
+  <table>
+
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="product : ${products}">
+
+      <td th:text="${product.id}"></td>
+
+      <td>
+        <img th:src="@{${product.imageUrl}}"
+             th:alt="${product.name}"
+             class="table-img">
+      </td>
+
+
+      <td th:text="${product.name}"></td>
+
+      <td th:text="${product.category}"></td>
+
+      <td>
+        ₹<span th:text="${product.price}"></span>
+      </td>
+
+      <td th:text="${product.stock}"></td>
+
+      <td>
+
+        <a th:href="@{/admin/edit/{id}(id=${product.id})}"
+           class="edit-btn">
+          Edit
+        </a>
+
+        <a th:href="@{/admin/delete/{id}(id=${product.id})}"
+           class="delete-btn">
+          Delete
+        </a>
+
+      </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<script src="/js/admin.js"></script>
+
+</body>
+</html>

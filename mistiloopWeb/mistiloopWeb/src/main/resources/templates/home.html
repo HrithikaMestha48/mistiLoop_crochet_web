@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -14,18 +13,21 @@
 
 <nav>
     <div class="logo">🧶 Mistiloop Crochet</div>
+
     <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/flowers">Flowers</a></li>
         <li><a href="/keychains">Keychains</a></li>
         <li><a href="/sweaters">Sweaters</a></li>
         <li><a href="/wallhangings">Wall Hangings</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
-
 </nav>
 
+<!-- HERO SECTION -->
+
 <section class="hero">
+
     <img src="/images/logo.jpeg"
          alt="Mistiloop Crochet"
          class="hero-logo">
@@ -36,11 +38,17 @@
 
     <p>Every Loop Tells A Story</p>
 
-    <button>Shop Now</button>
+    <!-- UPDATED SHOP NOW BUTTON -->
+    <a href="#collections" class="shop-btn">
+        Shop Now
+    </a>
 
 </section>
 
+<!-- LATEST UPDATES -->
+
 <section class="updates">
+
     <h2>✨ Latest Crochet Updates</h2>
 
     <div class="update-box">
@@ -49,8 +57,12 @@
 
 </section>
 
-<section class="categories">
+<!-- COLLECTIONS SECTION -->
+
+<section id="collections" class="categories">
+
     <h2>Our Collections</h2>
+
     <div class="products">
 
         <div class="card"
@@ -69,15 +81,18 @@
                 </div>
 
                 <form th:action="@{/cart/add/{id}(id=${product.id})}"
-                      method="post">
+                      method="post"
+                      onclick="event.stopPropagation();">
 
-                    <button class="btn cart">
+                    <button type="submit" class="btn cart">
                         Add To Cart
                     </button>
 
                 </form>
 
-                <button class="btn buy">
+                <button type="button"
+                        class="btn buy"
+                        onclick="event.stopPropagation();">
                     Buy Now
                 </button>
 
@@ -86,11 +101,29 @@
         </div>
 
     </div>
+
 </section>
+
+<!-- CONTACT SECTION -->
+
+<section id="contact" class="updates">
+
+    <h2>📞 Contact Us</h2>
+
+    <div class="update-box">
+        Email: mistiloopcrochet@gmail.com <br><br>
+        Phone: +91 XXXXX XXXXX
+    </div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer>
     © 2026 Mistiloop Crochet | Handmade with Love ❤️
 </footer>
+
 <script src="/js/script.js"></script>
+
 </body>
 </html>
